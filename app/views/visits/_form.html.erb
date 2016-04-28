@@ -1,0 +1,9 @@
+<%= form_for([@link, @link.visits.build]) do |f| %>
+  <p>
+    <%= f.label :ip %><br>
+    <%= f.text_field :ip %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

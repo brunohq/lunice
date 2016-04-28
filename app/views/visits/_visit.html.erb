@@ -1,0 +1,7 @@
+<tr>
+  <td><%= visit.ip %></td>
+  <td><%= visit.created_at %></td>
+  <td><%= link_to 'Destroy Visit', [visit.link, visit],
+           method: :delete,
+           data: { confirm: 'Are you sure?' }  %></td>
+</tr>
