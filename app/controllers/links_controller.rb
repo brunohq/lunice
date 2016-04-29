@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+    before_filter :authenticate
+
     def index
         @links = Link.all
     end
@@ -44,7 +46,13 @@ class LinksController < ApplicationController
 
     private
 
-    def link_params
-        params.require(:link).permit(:url, :slug)
-    end
+        def link_params
+            params.require(:link).permit(:url, :slug)
+        end
+
+        def authenticate
+            authenticate_or_request_with_http_basic do |username, password|
+                username == ENV["ADMIN"] && password == ENV["ADMIN_SECRET"]
+            end
+        end
 end
