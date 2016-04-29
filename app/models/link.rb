@@ -4,7 +4,8 @@ class Link < ActiveRecord::Base
 	validates :url, presence: true
 	validates :url, format: { with: URI.regexp }, if: Proc.new { |a| a.url.present? }
     validates :slug, presence: true,
-                    length: { minimum: 2 }
+                    length: { minimum: 2 },
+                    uniqueness: { case_sensitive: false }
 
     def visits_count
     	self.visits.count
