@@ -1,22 +1,32 @@
-<p>
-  <strong>Url:</strong>
-  <%= @link.url %>
-</p>
- 
-<p>
-  <strong>Slug:</strong>
-  <%= @link.slug %>
-</p>
+<section id="link_data">
+	<p>
+	  <strong>Url:</strong>
+	  <%= @link.url %>
+	</p>
+	 
+	<p>
+	  <strong>Slug:</strong>
+	  <%= @link.slug %>
+	</p>
+</section>
 
-<h2>Visits</h2>
-<table class="table">
-  <%= render @link.visits %>
-</table>
+<section id="visits_stats">
+	<%= line_chart @stats, xtitle: "Date", ytitle: "Visits" %>
+</section>
+
+<section id="visits_list">
+	<h2>Visits</h2>
+	<table class="table">
+	  <%= render @link.visits %>
+	</table>
+</section>
 
 
 
-<h2>Add a visit:</h2>
-<%= render 'visits/form' %>
+
+<!-- <h2>Add a visit:</h2>
+# <%= render 'visits/form' %> -->
+
 
 <%= link_to 'Edit Link', edit_link_path(@link) %> |
 <%= link_to 'All Links', links_path %>
