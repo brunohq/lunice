@@ -38,4 +38,12 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Spoof all requests remote IP for debugging purposes
+  class ActionDispatch::Request
+    def remote_ip
+      "72.229.28.185" # NY
+    end
+  end
+
 end

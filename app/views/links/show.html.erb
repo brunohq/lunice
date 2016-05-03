@@ -11,7 +11,14 @@
 </section>
 
 <section id="visits_stats">
-	<%= line_chart @stats, xtitle: "Date", ytitle: "Visits" %>
+	<div class="row">
+		<div class="col-md-6">
+			<%= line_chart @stats, ytitle: "Visits" %>
+		</div>
+		<div class="col-md-6">
+			<%= geo_chart @link.visits.group(:city).count, library: {displayMode: "markers"} %>
+		</div>
+	</div>
 </section>
 
 <section id="visits_list">

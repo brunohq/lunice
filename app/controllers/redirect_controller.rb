@@ -1,10 +1,11 @@
 class RedirectController < ApplicationController
 	def show
         @link = Link.find_by slug: params[:slug]
-
-
-        visit = @link.visits.create(ip: request.remote_ip)
-
+        ip = request.remote_ip
+        geopoint = Geocoder.search(ip)
+  		city = geopoint[0].data['city']
+  		country = geopoint[0].data['country_name']
+        visit = @link.visits.create(ip: ip, city: city, country: country)
 
         redirect_to @link.url
     end
