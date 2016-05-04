@@ -16,7 +16,7 @@
 			<%= line_chart @stats, ytitle: "Visits" %>
 		</div>
 		<div class="col-md-6">
-			<%= geo_chart @link.visits.group(:city).count, library: {displayMode: "markers"} %>
+			<%= geo_chart @link.visits.unscoped.group(:city).count, library: {displayMode: "markers"} %>
 		</div>
 	</div>
 </section>
