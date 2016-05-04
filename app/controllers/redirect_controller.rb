@@ -1,7 +1,7 @@
 class RedirectController < ApplicationController
 	def show
         @link = Link.find_by slug: params[:slug]
-        entity = params[:e]
+        entity = params[:e] || 'N/S'
         ip = request.remote_ip
         geopoint = Geocoder.search(ip)
   		city = geopoint[0].data['city']
