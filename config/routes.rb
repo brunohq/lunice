@@ -4,7 +4,7 @@ Rails.application.routes.draw do
         resources :visits
     end
 
-    get 'r/:slug', to: 'redirect#show'
+    get 'r/:slug(/:e)', to: 'redirect#show'
 
     root 'welcome#index'
 
