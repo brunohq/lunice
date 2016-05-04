@@ -17,3 +17,5 @@
 /tmp
 .env
 Procfile
+
+vendor/assets/stylesheets/creative/creative.original.css
