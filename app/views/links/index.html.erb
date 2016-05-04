@@ -14,7 +14,7 @@
       <td><%= link.url %></td>
       <td><%= link.slug %></td>
       <td><%= link.visits_count %></td>
-      <td><%= link.last_visit.created_at if link.last_visit %></td>
+      <td><%= link.last_visit.created_at.to_s(:date_n_time) if link.last_visit %></td>
       <td><%= link_to 'Show', link_path(link) %></td>
       <td><%= link_to 'Edit', edit_link_path(link) %></td>
       <td><%= link_to 'Destroy', link_path(link),

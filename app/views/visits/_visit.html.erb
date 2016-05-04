@@ -2,7 +2,7 @@
   <td><%= visit.entity %></td>
   <td><%= visit.location %></td>
   <td><%= visit.ip %></td>
-  <td><%= visit.created_at %></td>
+  <td><%= visit.created_at.to_s(:date_n_time) %></td>
   <td><%= link_to 'Destroy Visit', [visit.link, visit],
            method: :delete,
            data: { confirm: 'Are you sure?' }  %></td>

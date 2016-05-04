@@ -13,12 +13,12 @@ class LinksController < ApplicationController
         if @link.visits.count > 0
             visit_dates = Hash[@link.visits.map {|v| [v.created_at]}]
             visit_count_by_date = visit_dates.inject(Hash.new(0)) do |hist, date|
-                hist[date[0].strftime(Time::DATE_FORMATS[:single])] += 1
+                hist[date[0].to_s(:single_day)] += 1
                 hist
             end
 
             Date.parse(visit_count_by_date.keys.first).upto(Date.today) do |date|
-                d = date.strftime(Time::DATE_FORMATS[:single])
+                d = date.to_s(:single_day)
                 @stats[d] = visit_count_by_date[d]
             end
         end

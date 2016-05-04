@@ -1,5 +1,6 @@
 class Link < ActiveRecord::Base
-	has_many :visits, dependent: :destroy
+	has_many :visits, -> { order 'created_at DESC' },
+                     dependent: :destroy
 
 	validates :url, presence: true
 	validates :url, format: { with: URI.regexp }, if: Proc.new { |a| a.url.present? }
