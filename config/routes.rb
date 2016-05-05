@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-    resources :links do
+    resources :links, path: 'manage' do
         resources :visits
     end
 
-    get 'r/:slug(/:e)', to: 'redirect#show'
+    get ':slug(/:e)', to: 'redirect#show'
 
     root 'welcome#index'
 
