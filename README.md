@@ -11,7 +11,7 @@
 ## Getting Started
 
 ```bash
-git clone https://github.com/lockitron/selfstarter.git
+git clone https://github.com/brunohq/lunice.git
 bundle install
 rake db:migrate
 rails s
