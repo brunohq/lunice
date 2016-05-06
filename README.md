@@ -4,6 +4,7 @@
 *TODO* Wanna see Lunice in action? [Try the demo](https://github.com/brunohq/lunice)
 
 ## Features
+
 - Create short links with your own custom domain (e.g. http://luni.ce/x83)
 - Generate custom URLs for specific Entities (person, company or campaign)
 - Track generic link clicks: Entity, date & time, location, ip address
@@ -19,22 +20,32 @@ rails s
 
 ### Management Interface
 
-http://localhost:3000/manage
+To access the management interface area you need to set a secure username and password. Rename the `.env.sample` to `.env` and change its content.
+
+```bash
+cp .env.sample .env
+vim .env
+```
+
+Restart the server and head over to: http://localhost:3000/manage and start creating your custom links.
 
 ## Deploying to Production
 
-Lunice runs smoothly on Heroku. You can quickly set up your custom links with your own domain all you need to do is first install the [Heroku Toolbelt](https://toolbelt.heroku.com) and then run:
+Lunice runs smoothly on Heroku. You can quickly set up your custom links with your own domain, all you need to do is first install the [Heroku Toolbelt](https://toolbelt.heroku.com) and then run:
 
 ```bash
 heroku create
 git push heroku master
 heroku run rake db:migrate
-heroku open
 ```
 
-## License
+Finally, you need to set a secure username and password to access the Management Interface:
 
-Lunice is licensed under the [MIT License](https://tldrlegal.com/license/mit-license).
+```bash
+ heroku config:set ADMIN=username ADMIN_SECRET=xxxxxxxxxxx
+```
+
+And, now you're ready to go!
 
 ## Improvements & Suggestions
 
