@@ -7,7 +7,7 @@
 
 - Create short links with your own custom domain (e.g. http://luni.ce/x83)
 - Generate custom URLs for specific Entities (person, company or campaign)
-- Track generic link clicks: Entity, date & time, location, ip address
+- Track link clicks: Entity, date & time, location, ip address
 
 ## Getting Started
 
@@ -27,11 +27,11 @@ cp .env.sample .env
 vim .env
 ```
 
-Restart the server and head over to: http://localhost:3000/manage and start creating your custom links.
+Restart the server and head over to: [http://localhost:3000/manage](http://localhost:3000/manage) and start creating your custom links.
 
 ## Deploying to Production
 
-Lunice runs smoothly on Heroku. You can quickly set up your custom links with your own domain, all you need to do is first install the [Heroku Toolbelt](https://toolbelt.heroku.com) and then run:
+Lunice runs smoothly on Heroku. You can quickly set up your custom links with your own domain, all you need to do is install the [Heroku Toolbelt](https://toolbelt.heroku.com) and then run:
 
 ```bash
 heroku create
